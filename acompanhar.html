@@ -1,0 +1,145 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8" />
+  <title>Acompanhar Pedido</title>
+  <link rel="icon" href="pikachu.jpg" type="image/jpg" />
+  <link rel="stylesheet" href="style.css" />
+  <style>
+    body {
+      margin: 0;
+      font-family: 'Segoe UI', sans-serif;
+      background-color: #fdf6ec;
+      display: flex;
+      flex-direction: column;
+      min-height: 100vh;
+      align-items: center;
+      justify-content: center;
+      text-align: center;
+      padding: 20px;
+    }
+
+    h1 {
+      color: #007f8c;
+      margin-bottom: 10px;
+    }
+
+    p {
+      color: #555;
+      margin-bottom: 20px;
+    }
+
+    input[type="text"] {
+      padding: 12px;
+      border: 2px solid #ccc;
+      border-radius: 6px;
+      width: 100%;
+      max-width: 300px;
+      font-size: 1rem;
+    }
+
+    button, .back-btn {
+      margin-top: 15px;
+      padding: 12px 24px;
+      background-color: #007f8c;
+      color: white;
+      border: none;
+      border-radius: 6px;
+      font-weight: bold;
+      cursor: pointer;
+      transition: background-color 0.3s ease, transform 0.2s ease;
+      text-decoration: none;
+      display: inline-block;
+    }
+
+    button:hover, .back-btn:hover {
+      background-color: #006f7a;
+    }
+
+    button:active, .back-btn:active {
+      transform: scale(0.96);
+    }
+
+    .resultado {
+      margin-top: 30px;
+      background-color: #e6f7f9;
+      padding: 20px;
+      border-radius: 10px;
+      max-width: 400px;
+      box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+      display: none;
+    }
+
+    .status-entregue {
+      color: #28a745;
+      font-weight: bold;
+    }
+
+    .status-em-transito {
+      color: #ff9800;
+      font-weight: bold;
+    }
+
+    .status-erro {
+      color: red;
+      font-weight: bold;
+    }
+
+    .back-container {
+      margin-top: 20px;
+    }
+
+    footer {
+      position: absolute;
+      bottom: 10px;
+      font-size: 0.9rem;
+      color: #666;
+    }
+  </style>
+</head>
+<body>
+  <h1>📦 Acompanhar Pedido</h1>
+  <p>Digite o código do pedido para ver o status:</p>
+
+  <input type="text" id="codigoPedido" placeholder="Ex: PED123456" />
+  <button onclick="verificarStatus()">Ver Status</button>
+
+  <div id="resultado" class="resultado"></div>
+
+  <div class="back-container">
+    <a href="Livros.html" class="back-btn">🔙 Voltar para Livros</a>
+  </div>
+
+  <footer>&copy; 2025 Livraria do Saber</footer>
+
+  <script>
+    function verificarStatus() {
+      const codigo = document.getElementById('codigoPedido').value.trim().toUpperCase();
+      const resultado = document.getElementById('resultado');
+
+      if (codigo === "") {
+        resultado.innerHTML = `<p class="status-erro">Por favor, insira um código de pedido válido.</p>`;
+      } else if (codigo === "PED123") {
+        resultado.innerHTML = `
+          <p><strong>Código:</strong> ${codigo}</p>
+          <p class="status-entregue">Status: Pedido entregue com sucesso!</p>
+          <p>Data de entrega: 15/06/2025</p>
+        `;
+      } else if (codigo === "PED456") {
+        resultado.innerHTML = `
+          <p><strong>Código:</strong> ${codigo}</p>
+          <p class="status-em-transito">Status: Em trânsito — Chegando em breve!</p>
+          <p>Previsão de entrega: 20/06/2025</p>
+        `;
+      } else {
+        resultado.innerHTML = `
+          <p><strong>Código:</strong> ${codigo}</p>
+          <p class="status-erro">Não encontramos esse pedido. Verifique o código.</p>
+        `;
+      }
+
+      resultado.style.display = 'block';
+    }
+  </script>
+</body>
+</html>

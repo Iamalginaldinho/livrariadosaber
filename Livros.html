@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8" />
+  <title>Livraria do Saber</title>
+  <link rel="icon" href="pikachu.jpg" type="image/jpg" />
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+
+  <header>
+     <a href="index.html" class="logo">📚 Livraria do Saber</a>
+     <a href="acompanhar.html" class="acompanhar-btn">📦 Acompanhar Pedido</a>
+  </header>
+
+  <section class="banner">
+    <h1>Bem-vindo à Livraria do Saber!</h1>
+    <p>Explore os melhores livros com apenas um clique.</p>
+  </section>
+
+  <main>
+    <div class="products">
+  <div class="product">
+    <h3>Dom Casmurro</h3>
+    <p>R$ 30,00</p>
+    <p class="description">Um clássico da literatura brasileira sobre amor e ciúmes.</p>
+    <button onclick="addToCart('Dom Casmurro', 30, 'Um clássico da literatura brasileira sobre amor e ciúmes.')">Adicionar</button>
+  </div>
+
+  <div class="product">
+    <h3>O Pequeno Príncipe</h3>
+    <p>R$ 45,00</p>
+    <p class="description">Uma fábula poética sobre amizade, amor e o sentido da vida.</p>
+    <button onclick="addToCart('O Pequeno Príncipe', 45, 'Uma fábula poética sobre amizade, amor e o sentido da vida.')">Adicionar</button>
+  </div>
+
+  <div class="product">
+    <h3>Harry Potter</h3>
+    <p>R$ 60,00</p>
+    <p class="description">A saga do jovem bruxo que mudou a fantasia moderna.</p>
+    <button onclick="addToCart('Harry Potter', 60, 'A saga do jovem bruxo que mudou a fantasia moderna.')">Adicionar</button>
+  </div>
+
+  <div class="product">
+    <h3>A Revolução dos Bichos</h3>
+    <p>R$ 25,00</p>
+    <p class="description">Uma alegoria sobre política e poder através de animais em uma fazenda.</p>
+    <button onclick="addToCart('A Revolução dos Bichos', 25, 'Uma alegoria sobre política e poder através de animais em uma fazenda.')">Adicionar</button>
+  </div>
+
+  <div class="product">
+    <h3>1984</h3>
+    <p>R$ 35,00</p>
+    <p class="description">Distopia clássica que explora o controle totalitário e vigilância.</p>
+    <button onclick="addToCart('1984', 35, 'Distopia clássica que explora o controle totalitário e vigilância.')">Adicionar</button>
+  </div>
+
+  <div class="product">
+    <h3>O Hobbit</h3>
+    <p>R$ 55,00</p>
+    <p class="description">A aventura do hobbit Bilbo Bolseiro no mundo fantástico da Terra-média.</p>
+    <button onclick="addToCart('O Hobbit', 55, 'A aventura do hobbit Bilbo Bolseiro no mundo fantástico da Terra-média.')">Adicionar</button>
+  </div>
+
+  <div class="product">
+    <h3>O Alquimista</h3>
+    <p>R$ 70,00</p>
+    <p class="description">Uma história inspiradora sobre sonhos e a busca pelo destino pessoal.</p>
+    <button onclick="addToCart('O Alquimista', 70, 'Uma história inspiradora sobre sonhos e a busca pelo destino pessoal.')">Adicionar</button>
+  </div>
+
+  <div class="product">
+    <h3>Capitães da Areia</h3>
+    <p>R$ 20,00</p>
+    <p class="description">Retrato da infância marginalizada nas ruas de Salvador.</p>
+    <button onclick="addToCart('Capitães da Areia', 20, 'Retrato da infância marginalizada nas ruas de Salvador.')">Adicionar</button>
+  </div>
+
+  <div class="product">
+    <h3>O Senhor dos Anéis</h3>
+    <p>R$ 90,00</p>
+    <p class="description">A épica jornada para destruir o anel do poder na Terra-média.</p>
+    <button onclick="addToCart('O Senhor dos Anéis', 90, 'A épica jornada para destruir o anel do poder na Terra-média.')">Adicionar</button>
+  </div>
+
+  <div class="product">
+    <h3>A Culpa é das Estrelas</h3>
+    <p>R$ 40,00</p>
+    <p class="description">Um romance comovente sobre amor e doença entre jovens.</p>
+    <button onclick="addToCart('A Culpa é das Estrelas', 40, 'Um romance comovente sobre amor e doença entre jovens.')">Adicionar</button>
+  </div>
+</div>
+
+
+  </main>
+
+  <div class="floating-cart" id="cart-icon" onclick="toggleCart()">
+    🛒
+    <span class="cart-count" id="cart-count">0</span>
+  </div>
+
+  <div class="cart-panel" id="cart-panel">
+    <h3>🛒 Seu Carrinho</h3>
+    <div class="cart-items" id="cart-items">
+      <p>O carrinho está vazio.</p>
+    </div>
+    <div class="cart-buttons">
+      <button class="continue-btn" onclick="toggleCart()">Continuar Comprando</button>
+      <button class="checkout-btn" onclick="window.location.href='finalizar.html'">Finalizar Compra</button>
+    </div>
+  </div>
+
+  <script src="script.js"></script>
+</body>
+</html>
